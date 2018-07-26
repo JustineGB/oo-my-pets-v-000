@@ -63,12 +63,11 @@ class Owner #HAS MANY PETS (class Fish, Dog, Cat = BELONGS TO the OWNER)
   def sell_pets
     @pets.each do |type, pets|
     pets.each do |pets|
-    pets.mood = "nervous"  
+    pets.mood = "nervous"
     pets.clear
     #key and value (dogs, "toby") return just the name array
     end
     end
-  
   end
 
   def list_pets #return list of all pets, iterate through the hash
