@@ -3,7 +3,7 @@ require 'pry'
 class Owner #HAS MANY PETS (class Fish, Dog, Cat = BELONGS TO the OWNER)
 
   attr_accessor :name, :pets #owner needs to get/set his/her name and his/her pets
-  #attr_reader :species #just need to read the species (the owner cannot 'write' or change the species)
+  attr_reader :species #just need to read the species (the owner cannot 'write' or change the species)
 
   @@all = [] #class var to keep track of all owners
 
