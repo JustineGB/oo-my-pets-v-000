@@ -1,5 +1,3 @@
-require 'pry'
-
 class Owner #HAS MANY PETS (class Fish, Dog, Cat = BELONGS TO the OWNER)
 
   attr_accessor :name, :pets #owner needs to get/set his/her name and his/her pets
