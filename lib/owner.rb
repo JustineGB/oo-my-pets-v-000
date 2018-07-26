@@ -64,7 +64,6 @@ class Owner #HAS MANY PETS (class Fish, Dog, Cat = BELONGS TO the OWNER)
     @pets.each do |type, pets|
     pets.each do |pets|
     pets.mood = "nervous"
-
     #key and value (dogs, "toby") return just the name array
     end
     end
