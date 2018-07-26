@@ -11,11 +11,10 @@ class Owner #HAS MANY PETS (class Fish, Dog, Cat = BELONGS TO the OWNER)
     @name = name #set local var to instance var
     @@all << self #shovel new instances of self (owner) into the @@all owner array
     @pets = {fishes: [], cats: [], dogs: []} #set instance var @pets to a hash for holding the pets
-    @species = species #need to define an initialization method for species? need to be able to call toby = Cat.new("Cat") => toby.species => Cat
+  #  @species = species #need to define an initialization method for species? need to be able to call toby = Cat.new("Cat") => toby.species => Cat
   end
 
 #CLASS METHODS:
-
   def self.all #class method (writter of @@all array)
     @@all
   end
@@ -28,9 +27,7 @@ class Owner #HAS MANY PETS (class Fish, Dog, Cat = BELONGS TO the OWNER)
     @@all.clear
   end
 
-
 #INSTANCE METHODS: #call on particular instances, not whole class. so, one instance of owner.
-
   def say_species #do not need to pass in an argument bc you have initialized each instance with a name (@species)
     return "I am a #{@species}."
   end
@@ -45,7 +42,7 @@ class Owner #HAS MANY PETS (class Fish, Dog, Cat = BELONGS TO the OWNER)
   end
 
   def buy_dog(name)
-    @pets[:dogs] << Dog.new(name)
+    @pets[:dogs] << Dog.new(name) #collabe objects
   end
 
   def walk_dogs
@@ -63,25 +60,25 @@ class Owner #HAS MANY PETS (class Fish, Dog, Cat = BELONGS TO the OWNER)
   def sell_pets
     @pets.each do |type, pets|
     pets.each do |pets|
-    pets.mood = "nervous"
-    #key and value (dogs, "toby") return just the name array
+    pets.mood = "nervous" #key and value (dogs, "toby") return just the name array
     end
     end
-        pets.clear
+    pets.clear
   end
 
   def list_pets #return list of all pets, iterate through the hash
   "I have #{@pets[:fishes].length} fish, #{@pets[:dogs].length} dog(s), and #{@pets[:cats].length} cat(s)."
   end
-
 end
+
+
+
 
 
 
 
 #bob = Owner.new("Bob")
 #kim = Owner.new("Kim")
-
 #todd = Cat.new("Todd")
 #todd.owner = bob  #important to set this equal to bob and not "bob" bc you want the OBJECT BOB not the STRING Bob!!!!
 # todd
